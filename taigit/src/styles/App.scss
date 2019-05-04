@@ -1,0 +1,243 @@
+@import 'Variables';
+@import 'Team';
+@import 'NumberDisplay';
+@import 'MemberPage';
+@import 'Projects';
+
+@import '/node_modules/react-grid-layout/css/styles.css';
+@import '/node_modules/react-resizable/css/styles.css';
+
+a {
+  text-decoration: none;
+}
+
+.box {
+  background-color: $nav-background;
+}
+
+.body {
+  background-color: $app-background;
+}
+
+.app-page {
+  margin-left: 5em;
+  padding-left: 1em;
+}
+
+.navbar {
+  height: 100vh;
+  width: 5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $nav-background;
+  margin-right: 1em;
+  padding-top: 1.25em;
+}
+
+.navFont {
+  color: white;
+  margin: 0 auto;
+  width: 2em;
+}
+
+.navButton {
+  background-color: $nav-background;
+  text-align: center;
+  min-height: 3.5em;
+  padding: 0.5em;
+  position: relative;
+
+  svg {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:hover {
+    background-color: $nav-hover;
+  }
+}
+
+@keyframes loading-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.nav-spinner {
+  display: none;
+
+  &.loading {
+    display: block;
+    background-color: $nav-background;
+    text-align: center;
+    min-height: 3.5em;
+    padding: 0.5em;
+    position: absolute;
+    bottom: 1em;
+    left: 1.25em;
+
+    svg {
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      animation: loading-spin infinite 2s linear;
+    }
+  }
+}
+
+.chart {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  position: relative;
+  background-color: $white-wash;
+  height: 100%;
+  width: 100%;
+}
+
+.chart-horizontal-primary {
+  height: 100%;
+  width: 100%;
+}
+
+.chart-square-primary {
+  background-color: $white-wash;
+}
+
+.chart-bar {
+  background-color: $white-wash;
+}
+
+.chart-stacked-bar {
+  height: 20em;
+  width: 35em;
+  background-color: $white-wash;
+}
+
+.chart-pie {
+  height: 100%;
+  width: 100%;
+  background-color: $white-wash;
+  display: grid;
+}
+
+.chart-title {
+  font-weight: bold;
+  color: $purple-dark;
+  padding-top: 0.5em;
+}
+
+.selector {
+  width: 15em;
+  margin-bottom: 1em;
+}
+.scroll-list {
+  margin-top: 1em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 80%;
+}
+
+.scroll-list-item {
+  margin-bottom: 0.35em;
+  margin-left: 1em;
+  margin-right: 1em;
+  text-align: left;
+  padding-right: 2em;
+
+  .content {
+    display: inline-block;
+    background-color: $blue;
+
+    p {
+      padding: 0.5em 0;
+      padding-left: 0.5em;
+      padding-right: 2em;
+      margin: 0.25em;
+      color: white;
+    }
+  }
+}
+
+.scroll-list::-webkit-scrollbar {
+	width: 0.5em;
+  background-color: #F5F5F5;
+  margin-right: 0.25em;
+}
+
+.scroll-list::-webkit-scrollbar-thumb {
+	border-radius: 0px;
+	background-color: $yellow;
+}
+
+.scroll-list::-webkit-scrollbar-track {
+	border-radius: 0px;
+	background-color: $yellow-light;
+}
+
+
+.react-grid-layout {
+  position: relative;
+  transition: height 200ms ease;
+}
+.react-grid-item {
+  transition: all 200ms ease;
+  transition-property: left, top;
+}
+.react-grid-item.cssTransforms {
+  transition-property: transform;
+}
+.react-grid-item.resizing {
+  z-index: 1;
+  will-change: width, height;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 3;
+  will-change: transform;
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: red;
+  opacity: 0.2;
+  transition-duration: 100ms;
+  z-index: 2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+.react-grid-item > .react-resizable-handle::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
