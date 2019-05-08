@@ -1,4 +1,8 @@
 # Scrum_Evaluation_Tool
+
+Team size : 13
+Sub-Team size : 4
+
 This project creates a web application called Taigit which is used as a Scrum Evaluation Tool. It has an User Interface which uses the API endpoints provided by Taiga and GitHub to fetch relevant information regarding the user's Scrum process. Based on this information, it analyzes the process according to certain metrics and generates a comprehensive result which is portaryed in the form of charts, graphs etc. The front end uses React/Redux while the backend uses Typescript.
 
 The tool has 3 parts:
